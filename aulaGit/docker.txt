@@ -1,0 +1,4 @@
+Realizado na maquina fisicamente
+realizado no gitOnline
+Linha inserida na Branch ramo1
+Esta linha vai criar um confito local.
