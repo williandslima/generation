@@ -6,16 +6,16 @@ programa {
 	real salario, abono
 	
 	//inicio
-	escreva ("Bem vindo ao cálculo de salário!!! \n") // Inicio da tela
+	escreva ("Bem vindo ao cï¿½lculo de salï¿½rio!!! \n") // Inicio da tela
 	
 	//digite o salario- leia o salario
-	escreva ("Digite o salário \n") // aparece na tela
+	escreva ("Digite o salï¿½rio \n") //Testando comentario aparece na tela
     leia (salario) // armazena o digitado na variavel salario
     
     //digite o abono , leia o abono
 	escreva ("Digite o abono \n") // aparece na tela 
     leia (abono) // armazena na tela o digitado
-    escreva ("O novo Salário é : ", salario + abono) // escreve o calculo na tela
+    escreva ("O novo Salï¿½rio ï¿½ : ", salario + abono) // escreve o calculo na tela
     
 
     
