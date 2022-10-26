@@ -19,10 +19,12 @@ programa
 			
 		}
 		
-	    escreva("Os elementos da Diagonol principal È: ", m[0][0], m[1][1], m[2][2], "\n ")
-	  
-	    escreva("Os elementos da Diagonol Secund·ria È: ", m[0][2], m[1][1], m[2][0], "\n ")
-	    
+	    escreva("Os elementos da Diagonol principal √©: ", m[0][0], m[1][1], m[2][2], "\n")
+	    escreva("Os elementos da Diagonol Secund√°ria √©: ", m[0][2], m[1][1], m[2][0], "\n")
+		inteiro soma = m[0][0]+m[1][1]+m[2][2]
+		escreva("Soma principal ", soma,"\n")
+		inteiro soma2 = m[0][2]+m[1][1]+ m[2][0]
+		escreva("Soma Secund√°ria " ,soma2, "\n")
 
 		
 		
