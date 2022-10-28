@@ -11,6 +11,7 @@ public class Boletim {
 			
         //criando a var
         float nota1, nota2, media;
+        boolean resposta;
         
         //Mensagem e lendo o que usuario ler
         System.out.println("Insita a primeira nota: ");
@@ -20,9 +21,12 @@ public class Boletim {
         // media da nota
         media = (nota1 + nota2) / 2;
         
+        // verificaco por
+        resposta = media >= 7; // true
+        System.out.println("O valor da media e maior ou igual a 7? " + resposta);
+
+    
         
-        
-		
 
 	}
 
