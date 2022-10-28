@@ -1,5 +1,4 @@
 package exec3CateIdade;
-
 import java.util.Scanner;
 
 public class exec3CateIdad {
