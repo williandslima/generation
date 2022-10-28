@@ -9,7 +9,7 @@ public class boletim {
         boolean resposta;
         media = 0;
 
-        // Mensagem e lendo o que usuario ler
+        // Mensagem e lendo o que usuario lerrasdasd
         System.out.println("Insita a primeira nota: ");
         nota1 = leia.nextFloat();
         System.out.println("Insita a primeira nota: ");
@@ -30,6 +30,7 @@ public class boletim {
 
         } else {
             System.out.println("As notas devem ser diferences de 0");
+            System.out.println("Atualizar ");
         }
 
 
