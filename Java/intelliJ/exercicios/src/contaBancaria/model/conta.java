@@ -61,17 +61,14 @@ public class conta {
         System.out.println("\n *********************");
         System.out.println("\n Dados da conta ");
         System.out.println("\n *********************");
-        System.out.println("\n Numero da conta " +this.numero );
-        System.out.println("\n Numero da Agencia " +this.agencia );
-        System.out.println("\n Tipo  " +this.tipo );
-        System.out.println("\n Titular " +this.titular );
-        System.out.println("\n Saldo" +this.saldo );
-
-
+        System.out.println("\n Numero da conta " + this.numero);
+        System.out.println("\n Numero da Agencia " + this.agencia);
+        System.out.println("\n Tipo  " + this.tipo);
+        System.out.println("\n Titular " + this.titular);
+        System.out.println("\n Saldo" + this.saldo);
 
 
     }
-
 
 
     public boolean sacar(float valor) {
