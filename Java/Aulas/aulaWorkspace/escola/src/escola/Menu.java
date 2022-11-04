@@ -2,10 +2,11 @@ package escola;
 
 import java.util.Scanner;
 
-import escola.module.aluno;
-import escola.module.notas;
+import escola.module.Aluno;
+import escola.module.Diretor;
+import escola.module.Notas;
 
-public class menu {
+public class Menu {
 
 	public static void main(String[] args) {
 
@@ -13,14 +14,15 @@ public class menu {
 
 		//____________Testando os Objetos
 		// objeto aluno com ... Matricula, Nome, Idade e mostrando dos dados do aluno
-		aluno aluno = new aluno(1, "Willian Lima", 10);
-		notas notas = new notas(10, 5, 9, 5);
+		Aluno aluno = new Aluno(1, "Willian Lima", 5);
 		// ojeto notas com as notas 1,2,3,4// Mostando as notas com a media ( falta
 		// float )
 		aluno.visualizar();
-		notas.visualizar();
 
 		
+		Diretor diretor = new Diretor (1, "Pedro ", "Creche");
+		diretor.visualizar();
+
 		//____________________________________
 		
 		//Loop do menu

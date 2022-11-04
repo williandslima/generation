@@ -2,23 +2,29 @@ package escola;
 
 import java.util.Scanner;
 
-import escola.module.aluno;
+import escola.module.Aluno;
+import escola.module.Diretor;
 import escola.module.notas;
-public class menu {
+
+public class Menu {
     public static void main(String[] args) {
+
         Scanner leia = new Scanner(System.in);
 
+        //____________Testando os Objetos
         // objeto aluno com ... Matricula, Nome, Idade e mostrando dos dados do aluno
-        aluno aluno = new aluno(1, "Willian Lima", 17);
-        aluno.visualizar();
-
+        Aluno aluno = new Aluno(1, "Willian Lima", 5);
         // ojeto notas com as notas 1,2,3,4// Mostando as notas com a media ( falta
         // float )
-        notas notas = new notas(0, 7, 10, 9);
-        notas.visualizar();
+        aluno.visualizar();
+        Diretor diretor = new Diretor(1, "Pedro ", "Creche");
+        diretor.visualizar();
+
+        //____________________________________
 
         //Loop do menu
         int opcao;
+
         while (true) { // loop infinito enquanto eu nao der opcao 7
 
             System.out.println("_____________________________________");
@@ -52,29 +58,32 @@ public class menu {
                     break;
 
                 case 2:
-                    System.out.println("Ver saldo");
+                    System.out.println("Lançar notas");
                     break;
 
                 case 3:
-                    System.out.println("Dados da Conta");
+                    System.out.println("Calcular média");
                     break;
 
                 case 4:
-                    System.out.println("Sacar");
+                    System.out.println("Editar cadastro");
                     break;
 
                 case 5:
-                    System.out.println("Depositar");
+                    System.out.println("Editar notas");
                     break;
 
                 case 6:
-                    System.out.println("Transferir");
+                    System.out.println("Relatório geral");
                     break;
 
                 default:
                     System.out.println("Opcao invalida");
                     break;
+
             }
+
         }
+
     }
 }

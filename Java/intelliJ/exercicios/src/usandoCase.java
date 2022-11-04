@@ -14,6 +14,8 @@ public class usandoCase {
 
             case "SP":
                 System.out.println(" Voce e de Sao Paulo ");
+                System.out.println("Digite o nome do Aluno");
+                String recebe = leia.nextLine();
                 break;
 
             case "BA":

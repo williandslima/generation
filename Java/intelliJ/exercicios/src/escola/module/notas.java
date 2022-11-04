@@ -2,8 +2,6 @@ package escola.module;
 
 public class notas {// atributos notas do Aluno
     private float nota1, nota2, nota3, nota4;
-
-
     // metodo construtor, referenciando um espaco na memoria para cada nota
     public notas(float nota1, float nota2, float nota3, float nota4) {
         this.nota1 = nota1;
@@ -11,8 +9,6 @@ public class notas {// atributos notas do Aluno
         this.nota3 = nota3;
         this.nota4 = nota4;
     }
-
-
     // metodo get(para retornar o valor) e metodo set (setar, enviar o valor para o atributo)
 
     /// float
@@ -31,7 +27,6 @@ public class notas {// atributos notas do Aluno
     public void setNota2(float nota2) {
         this.nota2 = nota2;
     }
-
     public float getNota3() {
         return nota3;
     }
@@ -69,14 +64,9 @@ public class notas {// atributos notas do Aluno
     public void visualizar() {
         System.out.println("\n nota1 " + this.nota1);
         System.out.println("\n nota2 " + this.nota2);
-        System.out.println("\n nota3  " + this.nota3);
-        System.out.println("\n nota4  " + this.nota4);
+        System.out.println("\n nota3 " + this.nota3);
+        System.out.println("\n nota4 " + this.nota4);
         float media = (this.nota1 + this.nota2 + this.nota3 + this.nota4) / 4;
-        System.out.println("\n Media  " + media);
-
-
-
+        System.out.println("\n Media " +media);
     }
-
-
 }
