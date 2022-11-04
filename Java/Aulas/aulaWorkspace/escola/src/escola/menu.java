@@ -13,8 +13,8 @@ public class menu {
 
 		//____________Testando os Objetos
 		// objeto aluno com ... Matricula, Nome, Idade e mostrando dos dados do aluno
-		aluno aluno = new aluno(1, "Willian Lima", 2);
-		notas notas = new notas(10, 10, 9, 5);
+		aluno aluno = new aluno(1, "Willian Lima", 10);
+		notas notas = new notas(10, 5, 9, 5);
 		// ojeto notas com as notas 1,2,3,4// Mostando as notas com a media ( falta
 		// float )
 		aluno.visualizar();

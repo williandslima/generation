@@ -3,6 +3,7 @@ package contaBancaria;
 import java.util.Scanner;
 
 import contaBancaria.model.conta;
+import contaBancaria.model.contaCorrente;
 import contaBancaria.util.cores;
 
 public class menu {
@@ -12,11 +13,15 @@ public class menu {
 		Scanner leia = new Scanner(System.in);
 
 		int opcao;
-		conta conta1 = new conta(1, 123, 1, "Willian Lima", 1000.0f);
+		contaCorrente conta = new contaCorrente(1, 123, 1, "Willian Lima", 1000.0f, 2000f);
+		
+		conta.sacar(100000.0f);
+		conta.visualizar();
 
-		// conta1.sacar(10.0f);
-		// conta1.visualizar();
 
+		
+		/*
+		
 		while (true) { // loop infinito enquanto eu nao der opcao 7
 
 			System.out.println(cores.TEXT_YELLOW_BOLD+ "_____________________________________" +cores.TEXT_RESET);
@@ -77,7 +82,7 @@ public class menu {
 
 			}
 
-		}
+		}*/
 
 	}
 

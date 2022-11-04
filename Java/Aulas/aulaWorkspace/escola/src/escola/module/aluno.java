@@ -1,7 +1,5 @@
 package escola.module;
 
-
-
 public class aluno {
 
 	// ATRIBUTOS
@@ -18,7 +16,6 @@ public class aluno {
 		this.nome = nome;
 		this.idade = idade;
 	}
-	
 
 	//
 
@@ -58,8 +55,20 @@ public class aluno {
 			System.out.println("\n Creche  ");
 		}
 
+		if (+this.idade > 0 && +this.idade <= 3) {
+			System.out.println("\n Creche  ");
+		}
+		if (+this.idade >= 4 && +this.idade <= 6) {
+			System.out.println("\n Pré-Escola  ");
+		}
+		if (+this.idade >= 7 && +this.idade <= 14) {
+			System.out.println("\n Ensino fundamental  ");
+		}
+		if (+this.idade >= 15 && +this.idade <= 17) {
+			System.out.println("\n Ensino média  ");
+		}
+		if (+this.idade >= 18) {
+			System.out.println("\n Ensino superior  ");
+		}
 	}
-
-	//
-
 }

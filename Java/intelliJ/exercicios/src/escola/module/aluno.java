@@ -48,13 +48,26 @@ public class aluno {
         System.out.println("\n *********************");
         System.out.println("\n Dados do aluno ");
         System.out.println("\n *********************");
-        System.out.println("\n Matricula" + this.matricula);
+        System.out.println("\n N. Matricula " + this.matricula);
         System.out.println("\n Nome " + this.nome);
         System.out.println("\n idade  " + this.idade);
 
         if (+this.idade > 0 && +this.idade <= 3) {
             System.out.println("\n Creche  ");
         }
+        if (+this.idade >= 4 && +this.idade <= 6) {
+            System.out.println("\n Pré-Escola  ");
+        }
+        if (+this.idade >= 7 && +this.idade <= 14) {
+            System.out.println("\n Ensino fundamental  ");
+        }
+        if (+this.idade >= 15 && +this.idade <= 17) {
+            System.out.println("\n Ensino média  ");
+        }
+        if (+this.idade >= 18) {
+            System.out.println("\n Ensino superior  ");
+        }
+
 
     }
 

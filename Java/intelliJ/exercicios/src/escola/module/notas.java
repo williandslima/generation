@@ -74,6 +74,8 @@ public class notas {// atributos notas do Aluno
         float media = (this.nota1 + this.nota2 + this.nota3 + this.nota4) / 4;
         System.out.println("\n Media  " + media);
 
+
+
     }
 
 

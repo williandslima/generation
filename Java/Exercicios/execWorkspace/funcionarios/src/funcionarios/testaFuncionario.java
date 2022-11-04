@@ -1,19 +1,19 @@
 package funcionarios;
 
+import funcionarios.module.funcGerente;
 import funcionarios.module.funcionario;
 
 public class testaFuncionario {
 
 	public static void main(String[] args) {
 
-		funcionario funcionario = new funcionario("Willian Lima ", 386123, 444, "Dev Junior", 100);
-		funcionario.visualizar();
-		funcionario.setNome("Ricardo Lima");
-		funcionario.setCPF(123456);
-		funcionario.setRegistro(2);
-		funcionario.setSalario(1000);
-
-		funcionario.visualizar();
+		funcGerente funcGerente = new funcGerente("Willian Lima ", 386123, 444, 999, "Dev Junior");
+		funcGerente.visualizar();
+		funcGerente.setNome("Ricardo Lima");
+		funcGerente.setCPF(123456);
+		funcGerente.setRegistro(2);
+		funcGerente.setSalario(1000);
+		funcGerente.visualizar();
 
 	}
 

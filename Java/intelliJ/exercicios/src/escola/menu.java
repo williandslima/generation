@@ -4,25 +4,21 @@ import java.util.Scanner;
 
 import escola.module.aluno;
 import escola.module.notas;
-
 public class menu {
-
     public static void main(String[] args) {
-
         Scanner leia = new Scanner(System.in);
 
         // objeto aluno com ... Matricula, Nome, Idade e mostrando dos dados do aluno
-        aluno aluno = new aluno(1, "Willian Lima", 2);
+        aluno aluno = new aluno(1, "Willian Lima", 17);
         aluno.visualizar();
 
         // ojeto notas com as notas 1,2,3,4// Mostando as notas com a media ( falta
         // float )
-        notas notas = new notas(10, 10, 9, 5);
+        notas notas = new notas(0, 7, 10, 9);
         notas.visualizar();
 
         //Loop do menu
         int opcao;
-
         while (true) { // loop infinito enquanto eu nao der opcao 7
 
             System.out.println("_____________________________________");
@@ -78,10 +74,7 @@ public class menu {
                 default:
                     System.out.println("Opcao invalida");
                     break;
-
             }
-
         }
-
     }
 }

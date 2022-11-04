@@ -2,15 +2,6 @@ package contaBancaria.model;
 
 public class conta {
 
-	public conta(int numero, int agencia, int tipo, String titular, float saldo) {
-		super();
-		this.numero = numero;
-		this.agencia = agencia;
-		this.tipo = tipo;
-		this.titular = titular;
-		this.saldo = saldo;
-	}
-
 	// atributos (Variavels
 	private int numero;
 	private int agencia;
@@ -20,6 +11,15 @@ public class conta {
 
 	public int getNumero() {
 		return numero;
+	}
+
+	public conta(int numero, int agencia, int tipo, String titular, float saldo) {
+		super();
+		this.numero = numero;
+		this.agencia = agencia;
+		this.tipo = tipo;
+		this.titular = titular;
+		this.saldo = saldo;
 	}
 
 	public void setNumero(int numero) {
@@ -58,15 +58,31 @@ public class conta {
 		this.saldo = saldo;
 	}
 
+	public void depositar(float valor) {
+		this.setSaldo(this.getSaldo() + valor);
+	}
+
 	public void visualizar() {
+
+		String tipo = "";
+
+		switch (this.tipo) {
+		case 1:
+			tipo = "Conta corrente";
+			break;
+		case 2:
+			tipo = "Conta poupanca";
+			break;
+		}
+
 		System.out.println("\n *********************");
 		System.out.println("\n Dados da conta ");
 		System.out.println("\n *********************");
 		System.out.println("\n Numero da conta " + this.numero);
 		System.out.println("\n Numero da Agencia " + this.agencia);
-		System.out.println("\n Tipo  " + this.tipo);
+		System.out.println("\n Tipo  " + tipo);
 		System.out.println("\n Titular " + this.titular);
-		System.out.println("\n Saldo" + this.saldo);
+		System.out.println("\n Saldo " + this.saldo);
 
 	}
 
