@@ -18,7 +18,6 @@ public class Menu {
         Collection < Pessoa > pes = new ArrayList<Pessoa>();
         //----
 
-
         Scanner leia = new Scanner(System.in);
         Scanner s = new Scanner(System.in);
         Scanner s1 = new Scanner(System.in);
