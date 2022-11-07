@@ -1,5 +1,6 @@
 package contaBancaria;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import contaBancaria.model.conta;
@@ -14,17 +15,13 @@ public class menu {
 
 		int opcao;
 		contaCorrente conta = new contaCorrente(1, 123, 1, "Willian Lima", 1000.0f, 2000f);
-		
+
 		conta.sacar(100000.0f);
 		conta.visualizar();
 
-
-		
-		/*
-		
 		while (true) { // loop infinito enquanto eu nao der opcao 7
 
-			System.out.println(cores.TEXT_YELLOW_BOLD+ "_____________________________________" +cores.TEXT_RESET);
+			System.out.println(cores.TEXT_YELLOW_BOLD + "_____________________________________" + cores.TEXT_RESET);
 			System.out.println("                                     ");
 			System.out.println("              BANCO W                ");
 			System.out.println("_____________________________________");
@@ -43,7 +40,6 @@ public class menu {
 
 			opcao = leia.nextInt();
 
-			
 			if (opcao == 7) {
 				System.out.println("Seção finalizada");
 				leia.close();
@@ -53,11 +49,13 @@ public class menu {
 			switch (opcao) {
 			case 1:
 				System.out.println("Criar conta");
+				keyPress();
 				// cadastra aluno// // / // /
 				break;
 
 			case 2:
 				System.out.println("Ver saldo");
+
 				break;
 
 			case 3:
@@ -82,8 +80,21 @@ public class menu {
 
 			}
 
-		}*/
+		}
 
 	}
 
+	public static void keyPress() {
+
+		try {
+
+			System.out.println("\n\nPressione Enter para Continuar...");
+			System.in.read();
+
+		} catch (IOException e) {
+
+			System.out.println("Você pressionou uma tecla diferente de enter!");
+
+		}
+	}
 }

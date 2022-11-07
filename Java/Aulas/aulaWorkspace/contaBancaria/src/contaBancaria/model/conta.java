@@ -1,6 +1,6 @@
 package contaBancaria.model;
 
-public class conta {
+public abstract class conta {
 
 	// atributos (Variavels
 	private int numero;

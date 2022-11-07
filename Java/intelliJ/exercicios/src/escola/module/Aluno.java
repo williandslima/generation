@@ -1,6 +1,6 @@
 package escola.module;
 
-public class Aluno extends Pessoa{
+public class Aluno extends Pessoa {
 
     private int idade;
 
@@ -22,9 +22,7 @@ public class Aluno extends Pessoa{
         super.visualizar();
         System.out.println("\n Idade " + this.idade);
 
-        if (+this.idade > 0 && +this.idade <= 3)
-
-        {
+        if (+this.idade > 0 && +this.idade <= 3) {
             System.out.println("\n Creche  ");
         }
         if (+this.idade >= 4 && +this.idade <= 6) {

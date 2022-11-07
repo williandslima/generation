@@ -1,6 +1,6 @@
 package escola.module;
 
-public class Diretor extends Pessoa{
+public class Diretor extends Pessoa {
 
     private String Categoria;
 
@@ -10,12 +10,15 @@ public class Diretor extends Pessoa{
         this.Categoria = Categoria;
         // TODO Auto-generated constructor stub
     }
+
     public String getCategoria() {
         return Categoria;
     }
+
     public void setCategoria(String categoria) {
         Categoria = categoria;
     }
+
     public void visualizar() {
         super.visualizar();
         System.out.println("\n Diretor da Modalidade " + this.Categoria);
