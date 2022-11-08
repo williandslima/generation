@@ -1,15 +1,14 @@
-package escola.module;
+package model;
 
 public abstract class Pessoa {
 
     // criar atributos genericos e entra o diretor e aluno
-
     private int matricula;
     private String nome;
 
 
+
     public Pessoa(int matricula, String nome) {
-        super();
         this.matricula = matricula;
         this.nome = nome;
     }

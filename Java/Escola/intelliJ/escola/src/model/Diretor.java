@@ -1,4 +1,4 @@
-package escola.module;
+package model;
 
 public class Diretor extends Pessoa {
 

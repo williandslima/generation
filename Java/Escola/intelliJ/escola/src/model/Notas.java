@@ -1,9 +1,9 @@
-package escola.module;
+package model;
 
-public class notas {// atributos notas do Aluno
+public class Notas {// atributos notas do Aluno
     private float nota1, nota2, nota3, nota4;
     // metodo construtor, referenciando um espaco na memoria para cada nota
-    public notas(float nota1, float nota2, float nota3, float nota4) {
+    public Notas(float nota1, float nota2, float nota3, float nota4) {
         this.nota1 = nota1;
         this.nota2 = nota2;
         this.nota3 = nota3;
