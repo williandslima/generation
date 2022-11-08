@@ -1,6 +1,6 @@
-package escola.module;
+package model;
 
-public class Diretor extends Pessoa{
+public class Diretor extends Pessoa {
 
     private String Categoria;
 

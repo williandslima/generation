@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author wslima
- *
- */
-module escola {
-}

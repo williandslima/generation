@@ -6,8 +6,6 @@ public abstract class Pessoa {
     private int matricula;
     private String nome;
 
-
-
     public Pessoa(int matricula, String nome) {
         this.matricula = matricula;
         this.nome = nome;

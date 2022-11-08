@@ -1,4 +1,4 @@
-package escola.module;
+package model;
 
 public class Aluno extends Pessoa {
 
@@ -18,7 +18,7 @@ public class Aluno extends Pessoa {
         this.idade = idade;
     }
 
-    public void visualizar() {
+    public void visualizar(){
         super.visualizar();
         System.out.println("\n Idade " + this.idade);
 
