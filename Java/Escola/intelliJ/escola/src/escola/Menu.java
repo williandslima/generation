@@ -12,15 +12,12 @@ import escola.module.Pessoa;
 import escola.module.notas;
 
 public class Menu {
+    public static Scanner leia = new Scanner(System.in);
     public static void main(String[] args) {
 
+        int matricula = 0;
         /// colection
         Collection < Pessoa > pes = new ArrayList<Pessoa>();
-        //----
-
-        Scanner leia = new Scanner(System.in);
-        Scanner s = new Scanner(System.in);
-        Scanner s1 = new Scanner(System.in);
 
         //____________Testando os Objetos
         Aluno aluno = new Aluno(1, "Willian Lima", 5);
@@ -67,9 +64,9 @@ public class Menu {
             switch (opcao) {
                 case 1:
                     System.out.println("Nome do aluno");
-                    String nome = s.nextLine();
+                    String nome = leia.nextLine();
                     System.out.println("Cadastrar Matricula");
-                    int matricula = s1.nextInt();
+                    int matricula = leia.nextInt();
                     keyPress();
                     break;
 
@@ -79,7 +76,7 @@ public class Menu {
                     break;
 
                 case 3:
-                    System.out.println("Calcular média");
+                    System.out.println("Pesquisa Aluno");
                     keyPress();
                     break;
 
@@ -89,7 +86,7 @@ public class Menu {
                     break;
 
                 case 5:
-                    System.out.println("Editar notas");
+                    System.out.println("Excluir cadastro");
                     keyPress();
                     break;
 

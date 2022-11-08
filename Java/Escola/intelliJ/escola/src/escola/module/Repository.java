@@ -1,14 +1,30 @@
 package escola.module;
 
 
+import escola.module.Pessoa;
+
+import escola.module.Aluno;
+
+import escola.module.Diretor;
+
+import escola.module.notas;
 
 public interface Repository {
 
-    public void cadastrarAluno (Aluno aluno);
+    public void pesquisarAluno (int matricula);
+
+    public void cadastrarAluno (Aluno nome);
+
+
+    public void editarCadastro (Aluno nome);
+
+
     public void lancarNotas (notas notas);
-    public void pesquisarAluno (Aluno aluno);
-    public void editarCadastro (Aluno aluno);
-    public void excluirCadastro (Aluno aluno);
+
+
+    public void excluirCadastro (int matricula);
+
+
     public void relatorio ();
 
 }
