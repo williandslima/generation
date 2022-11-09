@@ -4,14 +4,13 @@ public class Diretor extends Pessoa {
 
     private String Categoria;
 
-
     public Diretor(int matricula, String nome, String Categoria) {
         super(matricula, nome);
         this.Categoria = Categoria;
-        // TODO Auto-generated constructor stub
     }
 
     public String getCategoria() {
+
         return Categoria;
     }
 
@@ -19,9 +18,18 @@ public class Diretor extends Pessoa {
         Categoria = categoria;
     }
 
-    public void visualizar() {
-        super.visualizar();
-        System.out.println("\n Diretor da Modalidade " + this.Categoria);
 
-    }
+    /*public void visualizar() {
+        super.visualizar();
+        System.out.println("\n Diretor XXXX da Creche ");
+        System.out.println("\n Diretor matriculado na Creche  ");
+        System.out.println("\n Aluno matriculado na Pré-Escola  ");
+        System.out.println("\n Aluno matriculado no Ensino fundamental  ");
+        System.out.println("\n Aluno matriculado no Ensino média  ");
+        System.out.println("\n Aluno matriculado no Ensino superior  ");
+
+    }*/
+
+
+
 }

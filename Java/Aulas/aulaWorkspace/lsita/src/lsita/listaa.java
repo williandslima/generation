@@ -14,6 +14,7 @@ public class listaa {
 
 		// criando uma colection tipo de dado
 		ArrayList<Double> notas = new ArrayList<Double>();
+		
 		// coleciton aray list que armazena tipo double chamado notas
 
 		Double d = Double.valueOf(9);

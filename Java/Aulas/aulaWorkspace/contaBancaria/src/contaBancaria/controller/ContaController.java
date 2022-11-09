@@ -68,8 +68,18 @@ public class ContaController implements ContaRepository {
 	}
 
 	@Override
-	public void atualizar(conta conta) {
+	public void atualizar(conta conta) {// via teclado
 		// TODO Auto-generated method stub
+
+		// verificar se a conta existe.
+		var buscaConta = buscarNaCollection(conta.getNumero());
+
+		if (buscaConta != null) {
+			listaContas.set(listaContas.indexOf(buscaConta), conta);
+			System.out.println("\nA Conta numero: " + conta.getNumero() + " foi atualizada com sucesso!");
+		}
+		else
+			System.out.println("Conta nao encontrada");
 
 	}
 
@@ -103,6 +113,15 @@ public class ContaController implements ContaRepository {
 	public void transferir(int numeroOrigem, int numeroDestino, float valor) {
 		// TODO Auto-generated method stub
 
+	}
+
+	public int retornaTipo(int numero) {
+
+		for (var conta : listaContas) {
+			if (conta.getNumero() == numero)
+				return conta.getTipo();
+		}
+		return 0;
 	}
 
 }

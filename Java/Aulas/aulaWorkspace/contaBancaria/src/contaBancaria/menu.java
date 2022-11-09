@@ -42,7 +42,7 @@ public class menu {
 			System.out.println("            1 - Criar conta          ");
 			System.out.println("            2 - Listar todas         ");
 			System.out.println("            3 - Buscar por numero    ");
-			System.out.println("            4 - Sacar                ");
+			System.out.println("            4 - Atualizar            ");
 			System.out.println("            5 - Apagar conta         ");
 			System.out.println("            6 - Trasnferir           ");
 			System.out.println("            7 - Sair                 ");
@@ -78,13 +78,13 @@ public class menu {
 				case 1 -> {
 					System.out.println("Digite o Limite");
 					limite = leia.nextFloat();
-					contas.cadastrar(new contaCorrente(0, agencia, tipo, titular, saldo, limite ));
+					contas.cadastrar(new contaCorrente(0, agencia, tipo, titular, saldo, limite));
 				}
 				case 2 -> {
 					System.out.println("Digite o dia do aniversario");
 					aniversario = leia.nextInt();
-					contas.cadastrar(new contaPoupanca(0, agencia, tipo, titular, saldo, aniversario ));
-				
+					contas.cadastrar(new contaPoupanca(0, agencia, tipo, titular, saldo, aniversario));
+
 				}
 
 				}
@@ -104,20 +104,52 @@ public class menu {
 
 			case 3:
 				System.out.println("Buscar por numero");
-				
+
 				System.out.println("Digite o numero da conta");
 				numero = leia.nextInt();
 				contas.procurarPorNumero(numero);
 
-				
 				keyPress();
 
 				break;
 
 			case 4:
-				System.out.println("Sacar");
-				keyPress();
+				System.out.println("Atualizar");
 
+				System.out.println("Digite o numero da conta");
+				numero = leia.nextInt();
+
+				if (contas.buscarNaCollection(numero) != null) {
+
+					System.out.println("Digite o numero da Agencia");
+					agencia = leia.nextInt();
+					System.out.println("Digite o nome do Titular");
+					leia.skip("\\R?"); // tudo que for string ignorar a sujeira de cima
+					titular = leia.nextLine();
+					System.out.println("Digite o Saldo");
+					saldo = leia.nextFloat();
+
+					tipo = contas.retornaTipo(numero);
+					
+					switch (tipo) {
+					case 1 -> {
+						System.out.println("Digite o Limite");
+						limite = leia.nextFloat();
+						contas.cadastrar(new contaCorrente(numero, agencia, tipo, titular, saldo, limite));
+					}
+					case 2 -> {
+						System.out.println("Digite o dia do aniversario");
+						aniversario = leia.nextInt();
+						contas.cadastrar(new contaPoupanca(numero, agencia, tipo, titular, saldo, aniversario));
+
+					}
+
+					}
+
+				}else
+					System.out.println("Conta nao encontrada");
+
+				keyPress();
 				break;
 
 			case 5:
@@ -127,8 +159,6 @@ public class menu {
 				numero = leia.nextInt();
 				contas.deletar(numero);
 
-				
-				
 				keyPress();
 
 				break;

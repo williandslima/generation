@@ -29,8 +29,9 @@ public abstract class Pessoa {
 
 
     public void visualizar() {
-        System.out.println("\n Matricula " + this.matricula);
-        System.out.println("\n Nome " + this.nome);
+        System.out.println("\n Matricula: " + this.matricula);
+        System.out.println("\n Nome: " + this.nome);
+
     }
 
 
