@@ -6,7 +6,7 @@ cadeia tipoAnimal, caracAnimal, alimentoAnimal, totalTexto
 
 escreva ("Digite um tipo de animal: --- | Vertebrado ou Invertebrado | --- \n")
 leia(tipoAnimal)
-escreva ("Digite um tipo de animal entre : --- | Ave, Mamifero, Inseto ou Anelideo | ---- \n")
+escreva ("Digite um tipo de animal entre : --- | Ave, Mamifero, Inseto ou Anelideo | --- \n")
 leia(caracAnimal)
 escreva ("Digite o tipo de alimentacao do animao entre: --- | Carnivoro, Onivoro, Herbivoro, Hematofago | --- \n")
 leia(alimentoAnimal)
