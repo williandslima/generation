@@ -65,6 +65,9 @@ public class Menu {
                         System.out.println("------  Digite o nome do aluno  -----");
                         leia.skip("\\R?"); // tudo que for string ignorar a sujeira de cima
                         nome = leia.nextLine();
+
+                        //verificar se usuario digitou numero para idade
+
                         System.out.println("-----  Digite a idade do Aluno  -----");
                         idade = leia.nextInt();
                         System.out.println("_____________________________________");
@@ -98,23 +101,54 @@ public class Menu {
                             Aluno idade1 = aluno.buscarNaCollection(pesquisaMatricula);
                             int idadeAluno = idade1.getIdade();
                             // System.out.println(idadeAluno);
-                            System.out.println("Lançar notas do aluno "+nomeAluno);
-                            System.out.println("--------  Digite a Nota 1:  ---------");
-                            System.out.println("_____________________________________");
-                            leia.skip("\\R?");
-                            nota1 = leia.nextFloat();
-                            System.out.println("--------  Digite a Nota 2:  ---------");
-                            System.out.println("_____________________________________");
-                            leia.skip("\\R?");
-                            nota2 = leia.nextFloat();
-                            System.out.println("--------  Digite a Nota 3:  ---------");
-                            System.out.println("_____________________________________");
-                            leia.skip("\\R?");
-                            nota3 = leia.nextFloat();
-                            System.out.println("--------  Digite a Nota 4:  ---------");
-                            System.out.println("_____________________________________");
-                            leia.skip("\\R?");
-                            nota4 = leia.nextFloat();
+                            System.out.println("Lançar notas do aluno " + nomeAluno);
+
+                            //verificando nota de 1 a 10
+                            do {
+                                System.out.println("--------  Digite a Nota 1:  ---------");
+                                System.out.println("_____________________________________");
+                                leia.skip("\\R?");
+                                nota1 = leia.nextFloat();
+                                if (nota1 < 0 || nota1 > 10) {
+                                    System.out.println("-------------  ATENÇÃO  -------------");
+                                    System.out.println("------ Digite nota entre 0 e 10 -----");
+                                }
+                            } while (nota1 < 0 || nota1 > 10);
+
+                            do {
+                                System.out.println("--------  Digite a Nota 2:  ---------");
+                                System.out.println("_____________________________________");
+                                leia.skip("\\R?");
+                                nota2 = leia.nextFloat();
+                                if (nota2 < 0 || nota2 > 10) {
+                                    System.out.println("-------------  ATENÇÃO  -------------");
+                                    System.out.println("------ Digite nota entre 0 e 10 -----");
+                                }
+                            } while (nota2 < 0 || nota2 > 10);
+
+                            do {
+                                System.out.println("--------  Digite a Nota 3:  ---------");
+                                System.out.println("_____________________________________");
+                                leia.skip("\\R?");
+                                nota3 = leia.nextFloat();
+                                if (nota3 < 0 || nota3 > 10) {
+                                    System.out.println("-------------  ATENÇÃO  -------------");
+                                    System.out.println("------ Digite nota entre 0 e 10 -----");
+                                }
+                            } while (nota3 < 0 || nota3 > 10);
+
+                            do {
+                                System.out.println("--------  Digite a Nota 4:  ---------");
+                                System.out.println("_____________________________________");
+                                leia.skip("\\R?");
+                                nota4 = leia.nextFloat();
+
+                                if (nota4 < 0 || nota4 > 10) {
+                                    System.out.println("-------------  ATENÇÃO  -------------");
+                                    System.out.println("------ Digite nota entre 0 e 10 -----");
+                                }
+                            } while (nota4 < 0 || nota4 > 10);
+
                             aluno.atualizar(new Aluno(pesquisaMatricula, nomeAluno, idadeAluno, nota1, nota2, nota3, nota4));
                             System.out.println("--------  Notas cadastradas, --------");
                             System.out.println("-----  para visualizar a média  -----");
@@ -130,7 +164,7 @@ public class Menu {
 
                     case 3: //listar alunos
                         System.out.println("Listar todos Alunos");
-                      // aluno.listarTodas();
+                        // aluno.listarTodas();
                         aluno.listarTodas();
                         keyPress();
                         break;
@@ -152,7 +186,7 @@ public class Menu {
                             System.out.println("Digite a idade deste Aluno: ");
                             idade = leia.nextInt();
                             aluno.atualizar(new Aluno(pesquisaMatricula, nome, idade, 0, 0, 0, 0));
-                            System.out.println("A Matricula: "+pesquisaMatricula +" foi atualizada para o nome "+nome+" e idade "+idade);
+                            System.out.println("A Matricula: " + pesquisaMatricula + " foi atualizada para o nome " + nome + " e idade " + idade);
                             System.out.println("ATENÇAO AS NOTAS FORAM ZERADAS !!!");
 
                         } else
