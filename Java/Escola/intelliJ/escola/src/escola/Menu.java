@@ -15,7 +15,6 @@ public class Menu {
         String nome;
         float nota1 = 0, nota2 = 0, nota3 = 0, nota4 = 0;
         Controller aluno = new Controller();
-        Controller diretor = new Controller();
 
         /// colection
         //____________Testando os Objetos
