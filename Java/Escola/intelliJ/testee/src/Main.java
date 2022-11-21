@@ -1,22 +1,19 @@
-package escola;
-
-import controller.Controller;
-import model.Aluno;
-
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import model.Aluno;
+import controller.Controller;
 
-public class Menu {
+class Main {
     public static Scanner leia = new Scanner(System.in);
 
     public static void main(String[] args) {
-
         int matricula = 0, idade;
         String nome;
         float nota1 = 0, nota2 = 0, nota3 = 0, nota4 = 0; // as notas sempre iniciam zeradas
         Controller aluno = new Controller(); //objeto com a lista para armazenar info do aluno
         Tela tela = new Tela(); //objeto onde fica todas mensagens da tela
+
         aluno.cadastrarAuto(); // cadastrando 5 alunos automaticos
 
         //____________________________________
@@ -34,29 +31,16 @@ public class Menu {
                 }
                 switch (opcao) {
                     case 1: // cadastrar aluno
-                        tela.msgListarTodosAlunos();
-                        aluno.listarAlinhado();
-                        int confirmar;
-                        System.out.println("Cadastrar ou Sair?");
-                        confirmar = leia.nextInt();
-                        if (confirmar == 0) {
-                            keyPress();
-                            break;
-                        } else if (confirmar == 1) {
-                            tela.msgDigiteNomeAluno();
-                            nome = leia.nextLine();
-                            tela.msgDigiteIdadeAluno();
-                            idade = leia.nextInt();
-                            // coloando informacoes na lista aluno, com nota 0
-                            aluno.cadastrar(new Aluno(0, nome, idade, nota1, nota2, nota3, nota4));
-                            tela.msgAlunoCadSucesso();
-                            aluno.listarAlinhado();
-                            keyPress();
-                            break;
-                        } else {
-                            keyPress();
-                            break;
-                        }
+                        tela.msgDigiteNomeAluno();
+                        nome = leia.nextLine();
+                        tela.msgDigiteIdadeAluno();
+                        idade = leia.nextInt();
+
+                        // coloando informacoes na lista aluno, com nota 0
+                        aluno.cadastrar(new Aluno(0, nome, idade, nota1, nota2, nota3, nota4));
+                        tela.msgAlunoCadSucesso();
+                        keyPress();
+                        break;
 
                     case 2: // calcular media
                         tela.msgLacamentoNotas();
@@ -71,7 +55,6 @@ public class Menu {
                         tela.msgListarLancarNotas();
                         System.out.println("Nome: " + nomeAluno);
                         System.out.println("Idade: " + idadeAluno);
-
 
                         if (aluno.buscarNaCollection(pesquisaMatricula) != null) {
                             do {

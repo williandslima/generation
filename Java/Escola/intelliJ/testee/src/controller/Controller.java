@@ -44,22 +44,19 @@ public class Controller implements Repository {
 
 
     public void cadastrar(Aluno nome) {// riando numeros automaticmos
-
-
         nome.setMatricula(gerarNumero());
         // criar conta
         listaAluno.add(nome);
     }
 
     private int gerarNumero() {
-
-        return listaAluno.size()+1;    // metodo vai retornar numero de lista etcs
-
+        return listaAluno.size() + 1; /// metodo vai retornar numero de lista etcs
     }
+
 
     public void atualizar(Aluno nome) {
 
-        Aluno buscaAluno = buscarNaCollection(nome.getMatricula());
+        var buscaAluno = buscarNaCollection(nome.getMatricula());
 
         if (buscaAluno != null) {
             listaAluno.set(listaAluno.indexOf(buscaAluno), nome);
@@ -71,7 +68,7 @@ public class Controller implements Repository {
     @Override
     public void deletar(int numero) {
 
-        Aluno pesquisa = buscarNaCollection(numero);
+        var pesquisa = buscarNaCollection(numero);
         if (pesquisa != null) {
             if (listaAluno.remove(pesquisa))
                 System.out.println("----------  Aluno apagado  ----------");
@@ -102,8 +99,7 @@ public class Controller implements Repository {
     }
 
     public void listarAlinhado() {
-        
-        for (Aluno aluno : listaAluno) {
+        for (var aluno : listaAluno) {
             System.out.println("Matricula: "+aluno.getMatricula() +" | Nome: " +aluno.getNome() );
         }
     }

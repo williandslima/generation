@@ -37,7 +37,12 @@ SELECT * FROM tb_colaboradores WHERE salario < 2.000;
 
 UPDATE tb_colaboradores SET salario = 3.500 WHERE id = 1;
 
-SELECT * FROM tb_colaboradores
+SELECT * FROM tb_colaboradores;
+
+SELECT nome NOME FROM tb_colaboradores;
+
+
+
 
 
 
