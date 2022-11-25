@@ -57,6 +57,8 @@ public class PostagemController {
 		// select * from tb_postagens WHERE id = 1
 
 	}
+	
+	////checar se o tema existe
 
 	// busca pelo titulo
 	@GetMapping("/titulo/{titulo}")
@@ -80,12 +82,12 @@ public class PostagemController {
 
 		//return ResponseEntity.status(HttpStatus.OK).body(postagemRepository.save(postagem));
 		
+		
 		return postagemRepository.findById(postagem.getId()) // retorna o id se ele for ok
 				.map(resposta -> ResponseEntity.status(HttpStatus.OK) /// salva mensagem
 						.body(postagemRepository.save(postagem))) /// do corpo da mensagem
-				.orElse(ResponseEntity.notFound().build()); // se nao for ok manda esta mensagem
-		
-		
+				.orElse(ResponseEntity.notFound().build()); // se nao for ok manda esta mensagemß
+	
 	}
 
 	
@@ -96,9 +98,9 @@ public class PostagemController {
 	public void deletePostagem(@PathVariable Long id) {
 		
 		
-		Optional <Postagem> recebePostagem = postagemRepository.findById(id);
+		Optional <Postagem> recebeidPostagem = postagemRepository.findById(id);
 				
-		if (recebePostagem.isEmpty())
+		if (recebeidPostagem.isEmpty())
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 		
 		postagemRepository.deleteById(id);

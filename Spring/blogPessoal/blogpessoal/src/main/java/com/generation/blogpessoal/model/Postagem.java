@@ -5,12 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.UpdateTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 // criando em segundo lugar o model, privates. atributos para postagem + 
 // get e set depos, sem construtor
@@ -29,6 +32,7 @@ public class Postagem {
 	// anotacao para o atributo
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // id gerar automatico
+	@NotNull (message = "O Atributo id e obrigatorio")
 	private Long id; //jpa por padrao usa no id o Long com l M
 	
 	
@@ -46,11 +50,27 @@ public class Postagem {
 	//
 	
 	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	@NotNull (message = "Colocar o id do TEMA - Não pode ficar sem tema !!!")
+	//@NotBlank (message = "Nao pode ficar em branco")
+	private Tema tema;
+	
+	
+	///criar atributo do tema @manytoone
 	
 	// habito de cada linha salvar o arqui
 	
 	// get and sets
 	
+	public Tema getTema() {
+		return tema;
+	}
+
+	public void setTema(Tema tema) {
+		this.tema = tema;
+	}
+
 	public Long getId() {
 		return id;
 	}
