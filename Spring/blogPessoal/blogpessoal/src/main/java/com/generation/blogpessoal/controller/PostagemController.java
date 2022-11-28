@@ -22,6 +22,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.generation.blogpessoal.model.Postagem;
 import com.generation.blogpessoal.repository.PostagemRepository;
+import com.generation.blogpessoal.repository.TemaRepository;
 
 @RestController
 @RequestMapping("/postagens")
@@ -30,6 +31,9 @@ public class PostagemController {
 
 	@Autowired // ingecao de dependencia
 	private PostagemRepository postagemRepository;
+	
+	@Autowired 
+	private TemaRepository temaRepository;
 
 	@GetMapping
 	public ResponseEntity<List<Postagem>> getAll() { // resposta HTTP
@@ -72,22 +76,34 @@ public class PostagemController {
 	// postar
 	@PostMapping
 	public ResponseEntity<Postagem> postPostagem(@Valid @RequestBody Postagem postagem) {
-		return ResponseEntity.status(HttpStatus.CREATED).body(postagemRepository.save(postagem));
-
-	}
+		
+		if (temaRepository.existsById(postagem.getTema().getId())) //chec id do tema dentro da postagem
+			return ResponseEntity.status(HttpStatus.CREATED).body(postagemRepository.save(postagem));
+		
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+		}
 
 	// atualizar
 	@PutMapping
 	public ResponseEntity<Postagem> putPostagem(@Valid @RequestBody Postagem postagem) {
 
 		//return ResponseEntity.status(HttpStatus.OK).body(postagemRepository.save(postagem));
+
 		
-		
-		return postagemRepository.findById(postagem.getId()) // retorna o id se ele for ok
-				.map(resposta -> ResponseEntity.status(HttpStatus.OK) /// salva mensagem
-						.body(postagemRepository.save(postagem))) /// do corpo da mensagem
-				.orElse(ResponseEntity.notFound().build()); // se nao for ok manda esta mensagemß
+		if (postagemRepository.existsById(postagem.getId())){//tem id da postagem checa o tema
+			if (temaRepository.existsById(postagem.getTema().getId())) // tem o tema ele grava embaixo
+				return ResponseEntity.status(HttpStatus.OK).body(postagemRepository.save(postagem));
 	
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+		}// nao tem BAD
+	
+		//return postagemRepository.findById(postagem.getId()) // retorna o id se ele for ok
+				//.map(resposta -> ResponseEntity.status(HttpStatus.OK) /// salva mensagem
+			//			.body(postagemRepository.save(postagem))) /// do corpo da mensagem
+			//.orElse(ResponseEntity.notFound().build()); // se nao for ok manda esta mensagemß
+	
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+
 	}
 
 	
