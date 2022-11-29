@@ -1,0 +1,29 @@
+package com.lojaGames.model;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+public class Categoria {
+
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	@NotNull (message = "O Atributo id e obrigatorio")
+	private Long id;
+	
+	@NotNull
+	private String descricao;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("categoria")
+	@NotNull(message = "No pode ficar sem tema")
+	private Produto produto;
+	
+	
+	
+}
