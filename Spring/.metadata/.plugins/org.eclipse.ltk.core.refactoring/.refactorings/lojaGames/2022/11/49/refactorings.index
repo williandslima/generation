@@ -13,3 +13,4 @@
 1669727053643	Rename local variable 'produto'
 1669727080034	Rename local variable 'produto'
 1669727265666	Rename method 'findAllByProdutoContainingIgnoreCase'
+1669741281528	Rename package 'com.lojaGames.Controller'
